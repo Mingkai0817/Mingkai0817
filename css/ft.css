@@ -1,50 +1,51 @@
 /* tzy页脚样式 */
 #ft {
-    max-width: 1200px;
-    margin: 0 auto 10px;
-    display: flex;
-    color: rgb(255 255 255 / 80%) !important;
-    text-align: left;
-    flex-wrap: wrap;
-  }
-  
-  .ft-item-1,
-  .ft-item-2 {
-    display: flex;
-    height: 100%;
-    padding: 2px 14px;
-  }
-  
-  .ft-item-1 {
-    flex-direction: column;
-    flex: 2;
-  }
-  
-  .ft-item-2 {
-    flex: 1;
-    flex-direction: column;
-  }
-  
-  .t-top {
-    display: flex;
-  }
-  
-  .t-top .t-t-l {
-    display: flex;
-    flex-direction: column;
-    flex: 1.4;
-    margin-right: 10px;
-  }
-  
-  .t-top .t-t-l .bg-ad {
-    width: 85%;
-    border-radius: 10px;
-    padding: 0 10px;
-  }
-  
-  .btn-xz-box {
-    margin-top: 10px;
-  }
+  max-width: 1200px;
+  margin: 0 auto 10px;
+  display: flex;
+  color: rgb(255 255 255 / 80%) !important;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.ft-item-1,
+.ft-item-2 {
+  display: flex;
+  height: 100%;
+  padding: 2px 14px;
+}
+
+.ft-item-1 {
+  flex-direction: column;
+  flex: 2;
+}
+
+.ft-item-2 {
+  flex: 1;
+  flex-direction: column;
+}
+
+.t-top {
+  display: flex;
+}
+
+.t-top .t-t-l {
+  display: flex;
+  flex-direction: column;
+  flex: 1.4;
+  margin-right: 10px;
+}
+
+.t-top .t-t-l .bg-ad {
+  width: 85%;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.btn-xz-box {
+  margin-top: 10px;
+}
+
   
   /* 按钮背景颜色等 */
   .btn-xz {
