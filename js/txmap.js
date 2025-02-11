@@ -220,7 +220,7 @@ function showWelcome() {
     else timeChange = "夜深了，早点休息，少熬夜。";
 
     //自定义文本和需要放的位置
-    document.getElementById("welcome-info").innerHTML =`<b><center>🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自 <span style="color:var(--welcome-color)">${pos}</span> 的小伙伴。${timeChange}您当前的IP地址为： <span style="color:var(--welcome-color)">${ip}</span>，距离站长约 <span style="color:var(--welcome-color)">${dist}</span> 公里。想对您说：${posdesc}</b>`;
+    document.getElementById("welcome-info").innerHTML =`<b><center>🎉 欢迎信息 🎉</center>&emsp;欢迎来自 <span style="color:var(--welcome-color)">${pos}</span> 的小伙伴。${timeChange}您当前的IP地址为： <span style="color:var(--welcome-color)">${ip}</span>，距离站长约 <span style="color:var(--welcome-color)">${dist}</span> 公里。想对您说：${posdesc}</b>`;
 
 }
 
