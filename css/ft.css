@@ -1,5 +1,9 @@
 :root {
-  --square-color: #49A6E9;
+  --square-color: #f9b1d8;
+  --btn-hover-color: #ff7242;
+  --btn-color: #fff;
+  --btn-bg: #49b1f5;
+  --text-bg-hover: rgba(73,177,245,0.7);
 }
 /* tzy页脚样式 */
 #ft {
