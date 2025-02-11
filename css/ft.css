@@ -1,3 +1,6 @@
+:root {
+  --square-color: #49A6E9;
+}
 /* tzy页脚样式 */
 #ft {
   max-width: 1200px;
@@ -84,7 +87,7 @@
   /* 链接悬浮颜色 */
   .ft-links li a:hover {
     text-decoration: none !important;
-    color: var(--zhang-color) !important;
+    color: var(--square-color) !important;
   }
   
   .ft-item-2 .ft-img-group {
@@ -122,7 +125,7 @@
   }
   /* 头像悬浮颜色框 */
   .ft-item-2 .ft-img-group .img-group-item a img:hover {
-    border: 2px solid var(--zhang-color);
+    border: 2px solid var(--square-color);
   }
   
   @media screen and (max-width: 768px) {
