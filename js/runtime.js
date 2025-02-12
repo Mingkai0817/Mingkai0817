@@ -18,8 +18,8 @@ function createtime() {
   let currentTimeHtml = "";
   (currentTimeHtml =
     hnum < 18 && hnum >= 9
-    ? `<img class='boardsign' src='/images/github/suntime.svg' title='上课好好学才行哦~'><br> <div style="font-size:13px;font-weight:bold">本站已经运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i></div>`
-    : `<img class='boardsign' src='/images/github/eve.svg' title='回寝室就好好休息吧!'><br> <div style="font-size:13px;font-weight:bold">本站已经运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i></div>`),
+    ? `<img class='boardsign' src='/images/suntime.svg' title='上课好好学才行哦~'><br> <div style="font-size:13px;font-weight:bold">本站已经运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i></div>`
+    : `<img class='boardsign' src='/images/eve.svg' title='回寝室就好好休息吧!'><br> <div style="font-size:13px;font-weight:bold">本站已经运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i></div>`),
     document.getElementById("workboard") &&
     (document.getElementById("workboard").innerHTML = currentTimeHtml);
 }
