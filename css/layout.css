@@ -1,7 +1,97 @@
-/* 归档页 */
-.layout.hide-aside{
-    max-width:1400px;
+:root {
+    --icat-card-bg: #57e5e0bc;
+     /* --icat-fontcolor: #9204ff;
+    --style-border-always: #ad1e6a;
+    --icat-shadow-border: #100a0d; */
+     --icat-blue: #e01a557c; 
+    --icat-fontcolor: #ffffff;
+    --icat-secondbg: #ffffff;
+    --icat-secondtext: #fb9ed0; 
+    /* --icat-shadow-border: #ccc62a; */
+  }
+
+  .layout.hide-aside{
+    max-width:1200px;
 }
+
+.category-lists .category-list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 5em 0 3em;
+}
+.category-lists ul {
+    padding: 0;
+}
+.category-lists ul li {
+    display: flex;
+    width: fit-content;
+    font-size: 1.2em !important;
+    padding: 0.2em 0.5em;
+    background: var(--icat-card-bg);
+    margin: 0.5em 0.5em;
+    border-radius: 12px;
+    /* -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d; */
+    border: var(--style-border-always);
+    box-shadow: var(--icat-shadow-border);
+    align-items: center;
+}
+.category-lists .category-list a {
+    color: var(--icat-fontcolor) !important;
+}
+.category-lists .category-list a:hover {
+    color: var(--icat-blue) !important;
+}
+.category-lists ul li:before {
+    position: unset;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: 0;
+    color: var(--icat-fontcolor) !important;
+    cursor: pointer;
+    content: "#" !important;
+    font-family: "iconfont" !important;
+    opacity: 0.4;
+    padding-top: 2px;
+    padding-right: 2px;
+}
+.category-lists .category-list .category-list-count {
+    background: var(--icat-secondbg);
+    padding: 4px 4px;
+    border-radius: 6px;
+    color: var(--icat-secondtext);
+    line-height: 1;
+    text-align: center;
+    min-width: 40px;
+    display: inline-block;
+    font-size: 1.5rem;
+    box-shadow: var(--icat-shadow-border);
+}
+.category-lists .category-list .category-list-count:before,
+.category-lists .category-list .category-list-count:after {
+    content: '';
+}
+
+
+/* 文章卡片擦亮动画 */
+
+
+/* 归档页 */
+
+:root {
+    /* --june-blue: #b9b9ce; */
+    --june-light-grey: #ffffff;/*对准大字*/
+    --june-white: #ffffff;/*对准小字*/
+    --june-theme: #db619a46; /*对准跳转的背景*/
+    /* --dark-grey: #df122a; */
+/*    --card-bg: #9bc8c7; 正常卡片背景*/
+    /* --june-card-bg: #734bca; */
+  }
 
 #archive,#tag,#category {
     background: var(--june-card-bg);
