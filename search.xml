@@ -20,7 +20,9 @@
       
         <tags>
             
-            <tag> post_copyright, 版权声明 </tag>
+            <tag> post_copyright </tag>
+            
+            <tag> 版权声明 </tag>
             
         </tags>
       
