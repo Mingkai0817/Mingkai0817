@@ -1,0 +1,2510 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络实验一 交换网络组建 | Mingkai's Blog</title><meta name="author" content="Mingkai"><meta name="copyright" content="Mingkai"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="实验报告册模板及实验pkt文件下载：                                              2024实验报告纸-计算机网络-交换网络组建.doc                                                                                              Filename:&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络实验一 交换网络组建">
+<meta property="og:url" content="http://example.com/posts/87b.html">
+<meta property="og:site_name" content="Mingkai&#39;s Blog">
+<meta property="og:description" content="实验报告册模板及实验pkt文件下载：                                              2024实验报告纸-计算机网络-交换网络组建.doc                                                                                              Filename:&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-06-25T11:34:07.000Z">
+<meta property="article:modified_time" content="2025-02-12T23:59:37.695Z">
+<meta property="article:author" content="Mingkai">
+<meta property="article:tag" content="网络安全,博客记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机网络实验一 交换网络组建",
+  "url": "http://example.com/posts/87b.html",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2024-06-25T11:34:07.000Z",
+  "dateModified": "2025-02-12T23:59:37.695Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Mingkai",
+      "url": "https://blog.mingkai.fun/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://chat.deepseek.com/favicon.svg"><link rel="canonical" href="http://example.com/posts/87b.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":20,"languages":{"author":"作者: Mingkai","link":"链接: ","source":"来源: Mingkai's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络实验一 交换网络组建',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/ft.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://chat.deepseek.com/favicon.svg" alt="Logo"><span class="site-name">Mingkai's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">计算机网络实验一 交换网络组建</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络实验一 交换网络组建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-25T11:34:07.000Z" title="发表于 2024-06-25 19:34:07">2024-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T23:59:37.695Z" title="更新于 2025-02-13 07:59:37">2025-02-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:1,&quot;messagePrev&quot;:&quot;距离上次更新已经过去了&quot;,&quot;messageNext&quot;:&quot;天，该文章的内容可能已经过时。&quot;,&quot;postUpdate&quot;:&quot;2025-02-13 07:59:37&quot;}" hidden></div><hr />
+<h1>
+    实验报告册模板及实验pkt文件下载：
+</h1>
+<p>
+    <span style="font-size: 16px;">
+        <a target="_blank" rel="noopener" href="https://workupload.com/file/TF9CU3aFjwQ">
+            <strong>
+                2024实验报告纸-计算机网络-交换网络组建.doc
+            </strong>
+        </a>
+    </span>
+</p>
+<table>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Filename:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    2024实验报告纸-计算机网络-交换网络组建.doc
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Filesize:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    49664 (Byte)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Checksum:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    c5d83ff9675922bdc5d18ce32f57146888514df621c9b79d306b55ad54c1f8c7 (SHA256)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    QR-URL:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://workupload.com/qr/file/TF9CU3aFjwQ" />
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<p>
+    <strong>
+        <span style="font-size: 16px;">
+            <a href="https://workupload.com/file/XdaBbMSkW44" target="_blank" rel="noopener">
+                利用三层交换机实现不同vlan的主机间互联互通.pkt
+            </a>
+        </span>
+    </strong>
+</p>
+<table>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Filename:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    利用三层交换机实现不同vlan的主机间互联互通.pkt
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Filesize:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    9348 (Byte)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    Checksum:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    ac1fe7ed03efc234ff41c64ee54d46804770e7aa309b3afc6d092ffbcb82aacb (SHA256)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    QR-URL:&nbsp;
+                </span>
+            </td>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://workupload.com/qr/file/XdaBbMSkW44" />
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h1>
+    一、实验内容
+</h1>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            1.
+        </strong>
+        常用网络命令的应用 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            2.
+        </strong>
+        交换机基本配置 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            3.
+        </strong>
+        虚拟局域网VLAN基本设置 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            4.
+        </strong>
+        利用三层交换机实现不同VLAN间通信
+    </span>
+</p>
+<hr />
+<h1>
+    二、实验目的和要求
+</h1>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            1.
+        </strong>
+        通过了解网络实验台的软硬件环境及命令行界面，掌握网络配置和查看配置信息的方法。 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            2.
+        </strong>
+        通过熟悉常用的网络命令，掌握网络测试方法。 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            3.
+        </strong>
+        通过配置交换机端口隔离，理解虚拟局域网VLAN的原理，掌握Port Vlan的配置方法。 &emsp;&emsp;
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            4.
+        </strong>
+        通过配置三层交换机的路由功能，实行VLAN间互相通信。
+    </span>
+</p>
+<hr />
+<h1>
+    三、实验设备（软、硬件）
+</h1>
+<ul>
+    <li>
+        <span style="font-size: 16px;">
+            二层交换机
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            三层交换机
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            PC机
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            Packet Tracer仿真软件
+        </span>
+    </li>
+</ul>
+<hr />
+<h1>
+    四、实验设计方案（或实验综合知识）
+</h1>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;案例：某市某单位在办公楼内组建局域网，使各业务部门的计算机能够互连互通，为避免广播风暴，同时也是出于为不同的业务部门划分不同的VLAN，请根据以上需求，组建交换局域网。
+    </span>
+</p>
+<p>
+    <strong>
+        &emsp;&emsp;1. 组网需求分析
+    </strong>
+    &emsp;&emsp;
+</p>
+<p>
+    <strong>
+        &emsp;&emsp;2. 组网方案设计
+    </strong>
+    &emsp;&emsp;
+</p>
+<p>
+    <strong>
+        &emsp;&emsp;3. VLan及IP地址规划
+    </strong>
+</p>
+<table style="border-collapse: collapse; width: 43.8363%; border-style: solid; height: 280px;">
+    <thead>
+        <tr style="height: 49px;">
+            <th style="width: 9.94565%; height: 49px; text-align: center;">
+                主机名
+            </th>
+            <th style="width: 12.0652%; text-align: center; height: 49px;">
+                <p>
+                    交换机名
+                </p>
+            </th>
+            <th style="width: 7.66304%; text-align: center; height: 49px;">
+                <p>
+                    端口
+                </p>
+            </th>
+            <th style="width: 9.61956%; text-align: center; height: 49px;">
+                Vlan
+            </th>
+            <th style="width: 18.0978%; text-align: center; height: 49px;">
+                IP地址
+            </th>
+            <th style="width: 21.3587%; text-align: center; height: 49px;">
+                子网掩码
+            </th>
+            <th style="width: 21.1957%; text-align: center; height: 49px;">
+                网关地址
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="height: 21px;">
+            <td style="width: 9.94565%; text-align: center; height: 21px;">
+                主机0
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 21px;">
+                S2126-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 21px;">
+                F0/1
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 21px;">
+                10
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 21px;">
+                192.168.10.1
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 21px;">
+                255.255.255.0
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 21px;">
+                192.168.10.254
+            </td>
+        </tr>
+        <tr style="height: 21px;">
+            <td style="width: 9.94565%; text-align: center; height: 21px;">
+                主机1
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 21px;">
+                S2126-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 21px;">
+                F0/2
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 21px;">
+                10
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 21px;">
+                192.168.10.2
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 21px;">
+                255.255.255.0
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 21px;">
+                192.168.10.254
+            </td>
+        </tr>
+        <tr style="height: 21px;">
+            <td style="width: 9.94565%; text-align: center; height: 21px;">
+                主机2
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 21px;">
+                S2126-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 21px;">
+                F0/3
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 21px;">
+                20
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 21px;">
+                192.168.20.1
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 21px;">
+                255.255.255.0
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 21px;">
+                192.168.20.254
+            </td>
+        </tr>
+        <tr style="height: 21px;">
+            <td style="width: 9.94565%; text-align: center; height: 21px;">
+                主机3
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 21px;">
+                S2126-1
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 21px;">
+                F0/1
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 21px;">
+                20
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 21px;">
+                192.168.20.2
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 21px;">
+                255.255.255.0
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 21px;">
+                192.168.20.254
+            </td>
+        </tr>
+        <tr style="height: 21px;">
+            <td style="width: 9.94565%; text-align: center; height: 21px;">
+                主机4
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 21px;">
+                S2126-1
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 21px;">
+                F0/2
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 21px;">
+                30
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 21px;">
+                192.168.30.1
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 21px;">
+                255.255.255.0
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 21px;">
+                192.168.30.254
+            </td>
+        </tr>
+        <tr style="height: 42px;">
+            <td style="width: 9.94565%; text-align: center; height: 42px;">
+                二层交换机1
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 42px;">
+                S3760-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 42px;">
+                F0/1
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+        </tr>
+        <tr style="height: 42px;">
+            <td style="width: 9.94565%; text-align: center; height: 42px;">
+                二层交换机2
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 42px;">
+                S3760-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 42px;">
+                F0/2
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+        </tr>
+        <tr style="height: 42px;">
+            <td style="width: 9.94565%; text-align: center; height: 42px;">
+                三层交换机
+            </td>
+            <td style="width: 12.0652%; text-align: center; height: 42px;">
+                S3760-2
+            </td>
+            <td style="width: 7.66304%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 9.61956%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 18.0978%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.3587%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+            <td style="width: 21.1957%; text-align: center; height: 42px;">
+                &nbsp;
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h1>
+    五、实验原理
+</h1>
+<h2>
+    1. 二层交换技术
+</h2>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;二层交换技术发展比较成熟，二层交换机属于数据链路层设备，可以识别数据包中的MAC地址信息，根据MAC地址进行转发，并将这些MAC地址与对应的端口记录在自己内部的一个地址表中。
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;交换机的管理方式基本分为两种：带内管理和带外管理。通过交换机的Console口管理交换机属于带外管理，不占交换机的网络接口，其特点是需要使用配置线缆，近距离配置。
+    </span>
+</p>
+<hr />
+<h2>
+    2. VLAN技术
+</h2>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;
+        <code>
+            VLAN（VirtualLocalAreaNetwork，虚拟局域网）
+        </code>
+        是指在一个物理网段内，进行逻辑的划分，划分成若干个虚拟局域网。VLAN最大的特性是不受物理位置的限制，可以进行灵活的划分。VLAN具备了一个物理网段所具备的特性。相同VLAN内的主机可以互相直接访问，不同VLAN间的主机之间互相访问必须经由路由设备进行转发。
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;Port Vlan是实现VLAN的方式之一，Port Vlan是利用交换机的端口进行VLAN的划分，一个端口只能属于一个VLAN。
+    </span>
+</p>
+<hr />
+<h2>
+    3. 三层交换技术
+</h2>
+<p>
+    &emsp;&emsp;
+    <span style="font-size: 16px;">
+        三层交换机是在二层交换的基础上实现了三层的路由功能。三层交换机基于&ldquo;一次路由，多次交换&rdquo;的特性，在局域网环境中转发性能远远高于路由器。而且三层交换机同时具备二层的功能，能够和二层的交换机进行很好的数据转发。三层交换机的以太网接口要比一般的路由器多很多，更加适合多个局域网段之间的互联。
+    </span>
+</p>
+<hr />
+<h1>
+    六、实验方法及步骤
+</h1>
+<h2>
+    (1) 简单局域网环境的搭建
+</h2>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            第一部分流程如下：
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            (1)分配一个192.168.1.0/24的网段
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            (2)给3个主机分配IP地址依次为192.168.1.1、192.168.1.2、192.168.1.3
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            (3)熟悉基本的命令，如ping命令、ipconfig命令、tracert命令
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            (4)实现同路由器下的主机连通性测试
+        </span>
+    </p>
+</blockquote>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604182926275-1218752442.png"
+    alt="image" height="340" width="603" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<hr />
+<h3>
+    1.1 特定网段 192.168.168.1.0/24
+</h3>
+<p class="md-end-block md-p md-focus">
+    <span style="font-size: 16px;">
+        <span class="md-pair-s md-expand">
+            &emsp;&emsp;
+            <code>
+                &emsp;192.168.1.0/24
+            </code>
+        </span>
+        <span class="md-plain">
+            是一个IP地址和子网掩码的组合，用于标识一个特定的网络段。这种表示方法称为
+        </span>
+        <span class="md-pair-s ">
+            <strong>
+                <span class="md-plain">
+                    CIDR（无类别域间路由）表示法
+                </span>
+            </strong>
+        </span>
+        <span class="md-plain">
+            。
+        </span>
+    </span>
+</p>
+<blockquote>
+    <p class="md-end-block md-p">
+        <span style="font-size: 16px;">
+            <span class="md-pair-s ">
+                <strong>
+                    <span class="md-plain">
+                        192.168.1.0
+                    </span>
+                </strong>
+            </span>
+            <span class="md-pair-s ">
+                <strong>
+                    <span class="md-plain">
+                        是网络的IP地址
+                    </span>
+                </strong>
+            </span>
+            <span class="md-plain">
+                。
+            </span>
+        </span>
+        <span style="font-size: 16px;">
+            <span class="md-pair-s ">
+                <strong>
+                    <span class="md-plain">
+                        /24
+                    </span>
+                </strong>
+            </span>
+            <span class="md-pair-s ">
+                <strong>
+                    <span class="md-plain">
+                        表示子网掩码的位数
+                    </span>
+                </strong>
+            </span>
+            <span class="md-plain">
+                。
+            </span>
+        </span>
+        <span style="font-size: 16px;">
+            <span class="md-plain">
+                在这种情况下，
+            </span>
+            <span class="md-pair-s ">
+                <strong>
+                    <span class="md-plain">
+                        子网掩码是 255.255.255.0
+                    </span>
+                </strong>
+            </span>
+            <span class="md-plain">
+                。
+            </span>
+        </span>
+    </p>
+</blockquote>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            192.168.1.0/24 表示的网络范围是：
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            网络地址：192.168.1.0
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            可用的IP地址：192.168.1.1 至 192.168.1.254
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            广播地址：192.168.1.255
+        </span>
+    </p>
+</blockquote>
+<hr />
+<h3>
+    1.2 给3台主机分配IP地址
+</h3>
+<table style="width: 21.2042%;">
+    <thead>
+        <tr>
+            <th style="text-align: center; width: 27.6656%;">
+                <span style="font-size: 16px;">
+                    主机名称
+                </span>
+            </th>
+            <th style="text-align: center; width: 30.7167%;">
+                <span style="font-size: 16px;">
+                    IP地址
+                </span>
+            </th>
+            <th style="text-align: center; width: 41.8462%;">
+                <span style="font-size: 16px;">
+                    子网掩码
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center; width: 27.6656%;">
+                <span style="font-size: 16px;">
+                    主机0
+                </span>
+            </td>
+            <td style="text-align: center; width: 30.7167%;">
+                <span style="font-size: 16px;">
+                    192.168.1.1
+                </span>
+            </td>
+            <td style="text-align: center; width: 41.8462%;">
+                <span style="font-size: 16px;">
+                    255.255.255.0
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; width: 27.6656%;">
+                <span style="font-size: 16px;">
+                    主机1
+                </span>
+            </td>
+            <td style="text-align: center; width: 30.7167%;">
+                <span style="font-size: 16px;">
+                    192.168.1.2
+                </span>
+            </td>
+            <td style="text-align: center; width: 41.8462%;">
+                <span style="font-size: 16px;">
+                    255.255.255.0
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; width: 27.6656%;">
+                <span style="font-size: 16px;">
+                    主机2
+                </span>
+            </td>
+            <td style="text-align: center; width: 30.7167%;">
+                <span style="font-size: 16px;">
+                    192.168.1.3
+                </span>
+            </td>
+            <td style="text-align: center; width: 41.8462%;">
+                <span style="font-size: 16px;">
+                    255.255.255.0
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h3>
+    1.3 ping命令 测试主机间的连通性
+</h3>
+<p>
+    &emsp;&emsp;
+    <span style="font-size: 16px;">
+        <code>
+            ping
+        </code>
+        命令是一个网络诊断工具，用于
+        <strong>
+            测试主机之间的网络连接是否正常
+        </strong>
+        。它通过发送ICMP（Internet Control Message Protocol，互联网控制消息协议）回显请求消息到目标主机，并等待接收回显响应消息来工作。
+    </span>
+</p>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            当你执行ping命令时，它会做以下几件事：
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            1.发送一个或多个ICMP回显请求消息到指定的IP地址或域名。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            2.等待目标主机收到请求并发送回一个ICMP回显响应消息。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            3.显示往返时间（RTT，Round-Trip Time），即从发送请求到接收到响应所花费的时间。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            4.显示发送和接收的包的数量，以及丢失的包的数量。
+        </span>
+    </p>
+</blockquote>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604192824066-368374795.png"
+    alt="image" height="393" width="494" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<hr />
+<h3>
+    1.4 ipconfig命令 显示当前网络配置
+</h3>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;
+        <code>
+            ipconfig
+        </code>
+        是一个Windows操作系统中的命令行工具，
+        <strong>
+            用于显示当前的网络配置信息，包括IP地址、子网掩码、默认网关、DNS服务器等
+        </strong>
+        。
+    </span>
+</p>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604183859130-160561217.png"
+    alt="image" height="398" width="500" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;我们在主机 0 的命令提示符上调用
+        <code>
+            ipconfig
+        </code>
+        命令，可以查看到主机 0 的网络配置信息
+    </span>
+</p>
+<pre class="language-armasm highlighter-hljs">
+    <code>
+        IP Address......................: 192.168.1.1 Subnet Mask.....................:
+        255.255.255.0 Default Gateway.................: 0.0.0.0
+    </code>
+</pre>
+<hr />
+<h3>
+    1.5 tracert命令 查看数据包从你的计算机到目标主机所经过的路由路径
+</h3>
+<p>
+    &emsp;&emsp;
+    <span style="font-size: 16px;">
+        <code>
+            tracert
+        </code>
+        （在Windows中）或traceroute（在Unix/Linux和macOS中）命令是一个网络诊断工具，用于显示数据包从你的计算机到目标主机所经过的路由路径。这个命令通过发送一系列带有递增生存时间（TTL，Time
+        To Live）值的数据包来工作。
+    </span>
+</p>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            当使用tracert或traceroute命令时，它会：
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            1.向目标主机发送一个TTL值为1的数据包。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            2.第一个路由器（通常是你的本地ISP的路由器）收到这个数据包后，会将其转发一次，然后因为TTL值减为0而丢弃它，同时发送一个ICMP时间超过消息回给你的计算机。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            3.你的计算机收到ICMP消息后，会记录下这个路由器的地址。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            4.然后，tracert会发送一个TTL值为2的数据包，第二个路由器会将其转发一次，再次因为TTL值减为0而丢弃它，并发送ICMP消息。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            5.这个过程会一直重复，直到数据包到达目标主机或达到最大TTL值。
+        </span>
+    </p>
+</blockquote>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;我们在主机0的命令提示符中输入命令
+        <code>
+            tracert 192.168.1.2
+        </code>
+        ，来查看数据包从主机0到主机2所经过的路由路径。
+    </span>
+</p>
+<pre class="language-armasm highlighter-hljs">
+    <code>
+        PC0&gt;tracert 192.168.1.2 Tracing route to 192.168.1.2 over a maximum
+        of 30 hops: 1 83 ms 49 ms 52 ms 192.168.1.2 Trace complete.
+    </code>
+</pre>
+<p>
+    &emsp;&emsp;
+    <span style="font-size: 16px;">
+        根据获得的
+        <code>
+            tracert命令
+        </code>
+        的输出结果，我们可以得出以下信息：
+    </span>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        名称
+                    </strong>
+                </span>
+            </th>
+            <th style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        分析
+                    </strong>
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        目标主机
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    正在追踪到IP地址192.168.1.2的路由路径。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        最大跳数
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    tracert命令设置了最大30跳，这意味着它将尝试追踪最多30个路由器或网络设备。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        跳数和延迟
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    第1跳：显示了3次测量的往返时间（RTT），分别是83毫秒、49毫秒和52毫秒。这些时间表示数据包从您的计算机发送到192.168.1.2，然后从该地址返回的时间。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        路由路径
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    输出结果只显示了一个跳数，这意味着数据包直接从您的计算机发送到了目标IP地址，没有经过其他中间路由器。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        目标主机的响应
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    192.168.1.2能够响应ICMP回显请求，这表明您的计算机和目标主机之间的网络连接是通畅的。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        网络延迟
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    网络延迟（或称为ping时间）相对较低，这通常意味着网络性能良好。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        网络稳定性
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    由于3次测量的RTT值相差不大，可以认为网络连接相对稳定。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        网络拓扑
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    由于只有一跳，这可能表明192.168.1.2与您的计算机位于同一局域网（LAN）内。
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style="font-size: 16px;">
+                    <strong>
+                        Trace完成
+                    </strong>
+                </span>
+            </td>
+            <td style="text-align: left;">
+                <span style="font-size: 16px;">
+                    Trace complete.表示tracert命令已经完成其操作，没有更多的路由器或跳数需要追踪。
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;综上所述，这个输出结果表明主机0与
+        <code>
+            IP地址：192.168.1.2
+        </code>
+        之间有一个直接的、低延迟的、稳定的网络连接，且目标主机1能够正常响应网络请求。即，根据上面的返回结果，
+        <strong>
+            我们可以判定主机0和主机1在同一个局域网（LAN）内。
+        </strong>
+    </span>
+</p>
+<hr />
+<h2>
+    (2)交换机常用的配置命令行及命令行操作模式
+</h2>
+<h3>
+    2.1 交换机的命令行操作模式
+</h3>
+<pre class="language-powershell highlighter-hljs">
+    <code>
+        用户模式 Switch&gt; 特权模式 Switch# 全局配置模式 Switch(config)# 端口模式 Switch(config-if)#
+    </code>
+</pre>
+<hr />
+<h3>
+    2.2 交换机的常用配置命令行
+</h3>
+<pre class="language-powershell highlighter-hljs">
+    <code>
+        模式切换指令 enable 进入特权模式（一般简写为en） config t 进入全局配置模式 interface fa 0/1 进入交换机某个端口视图模式
+        exit 返回到上级模式 end 从全局以下模式返回到特权模式 快捷指令 帮助信息(如? 、co?、copy?)】 命令简写(如 en 的完整命令为
+        enable) 命令自动补全(Tab) 快捷键(ctrl+c中断测试,ctrl+z退回到特权视图) reload 重启(在特权模式下) hostname
+        X修改交换机名称(在全局配置模式下) 端口配置指令 speed,duplex 配置交换机端口参数 show version 查看交换机版本信息
+        show running-config 查看当前生效的配置信息 show startup-config 查看保存在NVRAM中的启动配置信息
+        show interface 查看端口信息 show mac-address-table 查看交换机的MAC地址 选择某个端口Switch(config)#
+        interface type mod/port (type：端口类型，通常有ethernet、Fastethernet、Gigabitethernet；
+        mod：端口所在的模块； port：在该模块中的编号；）:Switch(config)# interface fa 0/1; 选择多个端口Switch(config)#interface
+        type mod/startport-endport 如：Switch(config)# interface interface fa 0/1-5
+        //选择端口 fa 0/1 ~ fa 0/5 Switch(config-if)#speed [10/100/auto] 设置端口通信速度 Switch(config-if)#duplex
+        [half/full/auto] 设置端口单双工模式 若交换机设置为auto以外的具体速度，此时应注意保证通信双方也要有相同的设置值。 注意事项：在配置交换机时，要注意交换机端口的单双工模式的匹配，如果链路一端设置的是全双工，另一端是自动协商，则会造成响应差和高出错率，丢包现象会很严重。通常两端设置为相同的模式。
+        密码设置指令 设置进入特权模式的密码 Switch(config)# enable password ****** 通过console端口连接设备及Telnet远程登录时所需的密码；
+        Switch(config)# line console 0 表示配置控制台线路，0是控制台的线路编号。 Switch(config-line)#
+        login 用于打开登录认证功能。 Switch(config-line)# password 5ijsj 设置进入控制台访问的密码
+    </code>
+</pre>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;更加详细的交换机命令行内容请见该文：
+        <a target="_blank" rel="noopener" href="https://blog.csdn.net/gengkui9897/article/details/85109962">
+            Packet Tracer 思科模拟器入门教程 之二 交换机的基本配置与管理_管理交换机的思科教程-CSDN博客
+        </a>
+    </span>
+</p>
+<hr />
+<h2>
+    (3)利用二层交换机实现同vlan间的通信
+</h2>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604191947337-364174296.png"
+    alt="image" height="382" width="708" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            第二部分流程如下：
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            （1）虚拟局域网vlan的配置，
+        </span>
+        <span style="font-size: 16px;">
+            规划两个vlan，分别是vlan10和vlan20。
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 16px;">
+                vlan10：192.168.1.0/24（我们希望主机0、主机1、主机2和主机4工作在vlan10中）
+            </span>
+        </li>
+        <li>
+            <span style="font-size: 16px;">
+                vlan20：192.168.2.0/24（我们希望主机3和主机5工作在vlan20中）
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            （2）并将相应的接口指派到相应的vlan中去
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 16px;">
+                将交换机0与主机0/1/2相连的接口指派到对应的vlan10中;
+            </span>
+        </li>
+        <li>
+            <span style="font-size: 16px;">
+                将交换机0与主机3相连的接口指派到对应的vlan20中;
+            </span>
+        </li>
+        <li>
+            <span style="font-size: 16px;">
+                将交换机1与主机4相连的接口指派到对应的vlan10中;
+            </span>
+        </li>
+        <li>
+            <span style="font-size: 16px;">
+                将交换机1与主机5相连的接口指派到对应的vlan20中;
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            （3）主机0/1/2和主机4的关系是：不同交换机、相同vlan中的主机;
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            （4）主机3和主机5的关系是：不同交换机、相同vlan中的主机。
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            1.3 将交换机0和交换机1之间相连的接口的工作模式设定为trunk模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            2.1 相同交换机、相同vlan中主机的互联互通
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            2.2 不同交换机、相同vlan中主机的互联互通
+        </span>
+    </p>
+</blockquote>
+<hr />
+<h3>
+    3.1
+    <code>
+        show vlan
+    </code>
+    命令查看当前vlan数据库情况
+</h3>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604192540437-2003316701.png"
+    alt="image" height="391" width="498" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;通过
+        <code>
+            show vlan
+        </code>
+        命令来查看当前接口的指派情况，我们可以看到
+        <strong>
+            交换机的 24 个接口默认都工作在了 vlan1 中
+        </strong>
+        。
+    </span>
+</p>
+<hr />
+<h3>
+    3.2 vlan 配置中添加vlan10和vlan20
+</h3>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;在交换机配置页 VLAN 数据库中，我们分别添加 VLAN10（命名为 PC0124） 和 VLAN20（命名为 PC35）
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/1fa836caa70a18f26e48c14f8a88589e7177.jpeg"
+    height="380" width="474" />
+</p>
+<hr />
+<h3>
+    3.3 交换机的接口配置
+</h3>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/bdd5c1f971d2d0c2037d92da33928d9c7324.jpeg"
+    height="386" width="474" />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;我们可以看到主机与交换机相连的接口，如下表：
+    </span>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th style="text-align: center;">
+                主机名称
+            </th>
+            <th style="text-align: center;">
+                对应接口
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">
+                主机0
+            </td>
+            <td style="text-align: center;">
+                Fa0/1
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                主机1
+            </td>
+            <td style="text-align: center;">
+                Fa0/2
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                主机2
+            </td>
+            <td style="text-align: center;">
+                Fa0/3
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                主机3
+            </td>
+            <td style="text-align: center;">
+                Fa0/4
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">
+        <strong>
+            （1）我们依次将交换机0的接口1~3分别指派在vlan10中工作
+        </strong>
+        ，
+        <strong>
+            将接口4指派在vlan20中工作
+        </strong>
+        。
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604193157520-188582884.png"
+    alt="image" height="321" width="404" />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604193202007-620659720.png"
+    alt="image" height="321" width="404" />
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604193207566-670687621.png"
+    alt="image" height="321" width="404" />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604193211003-188383751.png"
+    alt="image" height="321" width="404" />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            （2）借助
+            <code>
+                show vlan
+            </code>
+            命令查看交换机0
+        </strong>
+        的配置后的vlan情况，我们可以看到现在的接口指派情况符合我们一开始的设定规划。
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/a34c694014841f3783a1baaed32db6164521.jpeg"
+    height="390" width="486" />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            （3）同理，我们在交换机1的配置中同样添加vlan10和vlan20
+        </strong>
+        ，并
+        <strong>
+            将接口1和接口2分别指派在vlan10和vlan20中工作
+        </strong>
+        ，最后借助show vlan命令查看
+        <strong>
+            交换机1
+        </strong>
+        的配置后的vlan情况
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/d32b941aeeaf2c90698f62ff180913889553.jpeg"
+    height="341" width="480" />
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/a6e05c9631783e0b6c73b1f949fb4bfe9304.jpeg"
+    height="325" width="405" />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/1e3194f0e3502e4f0ecbfa8647875b703130.jpeg"
+    height="325" width="405" />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            （4）交换机0和交换机1之间相连的那个（交换机0的接口5，交换机1的接口2）的工作模式必须是 trunk 模式
+        </strong>
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/cb5fefbf280ecbc076ee00fc1c83f7193907.jpeg"
+    height="132" width="625" />
+</p>
+<pre class="language-plaintext highlighter-hljs">
+    <code>
+        命令行代码：switchport mode trunk
+    </code>
+</pre>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;也可以手动在路由器的接口配置中手动选择
+        <code>
+            <strong>
+                trunk模式
+            </strong>
+        </code>
+        （如下图）
+    </span>
+</p>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/f5759851db88a725c52efebd6c5343ac2914.jpeg"
+    height="378" width="471" />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        <strong>
+            &emsp;&emsp;至此，所有的环境配置均已完成！！！
+        </strong>
+    </span>
+</p>
+<hr />
+<h3>
+    3.4 验证同vlan中主机间的互联互通
+</h3>
+<h4>
+    3.4.1 相同交换机、相同vlan中主机的互联互通
+</h4>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;主机0/1/2关系是：相同交换机、相同vlan中的主机
+    </span>
+</p>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604194453262-1759198225.png"
+    alt="image" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<hr />
+<h4>
+    3.4.2 不同交换机、相同vlan中主机的互联互通
+</h4>
+<p>
+    <span style="font-size: 16px;">
+        （1）主机0/1/2和主机4的关系是：不同交换机、相同vlan中的主机;
+    </span>
+</p>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604194629325-1946999905.png"
+    alt="image" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<p>
+    <span style="font-size: 16px;">
+        （2）主机3和主机5的关系是：不同交换机、相同vlan中的主机。
+    </span>
+</p>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604194721338-1521541257.png"
+    alt="image" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<hr />
+<h2>
+    (4)利用三层交换机实现不同vlan间的通信
+</h2>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            三层交换机：
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            三层交换机是所有vlan 的网关，每一个vlan的网关地址都要指派给三层交换机对应的虚拟接口
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            vlan10: &nbsp;ip address 192.168.1.254 255.255.255.0
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            vlan20: &nbsp;ip address 192.168.2.254 255.255.255.0
+        </span>
+    </p>
+</blockquote>
+<p>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img2024.cnblogs.com/blog/3455765/202406/3455765-20240604195041137-1779709001.png"
+    alt="image" height="372" width="904" style="display: block; margin-left: auto; margin-right: auto;"
+    />
+</p>
+<hr />
+<h3>
+    4.1 实现过程概述
+</h3>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            对三层交换机进行的操作： &nbsp; &nbsp;
+        </span>
+        <br />
+        <span style="font-size: 16px;">
+            （1）trunk协议封装为dot1q ：
+            <code>
+                switchport trunk encapsulation dot1q
+            </code>
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            （2）端口模式为trunk &nbsp;：
+            <code>
+                switchport mode trunk&nbsp;
+            </code>
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            （3）分别进入vlan10和vlan20的设置模式：
+            <code>
+                inter vlan10(20)
+            </code>
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            （4）将每个vlan的网关地址指派给三层交换机对应的虚拟接口：
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 16px;">
+                vlan10: &nbsp;
+                <code>
+                    ip address 192.168.1.254 255.255.255.0
+                </code>
+            </span>
+        </li>
+        <li>
+            <span style="font-size: 16px;">
+                vlan20: &nbsp;
+                <code>
+                    ip address 192.168.2.254 255.255.255.0
+                </code>
+            </span>
+        </li>
+    </ul>
+</blockquote>
+<hr />
+<h3>
+    4.2 查看三层交换机的虚拟接口 Fa0/1和Fa0/2
+</h3>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/63a8c1468402b78b17046f3a29bb607b4618.jpeg"
+    height="272" width="510" />
+</p>
+<p>
+    &emsp;&emsp;
+    <span style="font-size: 16px;">
+        这里，我们可以看到
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;
+        <strong>
+            三层交换机与交换机0连接的接口为：Fa0/1
+        </strong>
+    </span>
+</p>
+<p>
+    <span style="font-size: 16px;">
+        &emsp;&emsp;
+        <strong>
+            与交换机1连接的接口为：Fa0/2
+        </strong>
+    </span>
+</p>
+<hr />
+<h3>
+    4.3
+    <span style="font-size: 16px;">
+        trunk协议封装为dot1q ：
+        <code>
+            switchport trunk encapsulation dot1q
+        </code>
+    </span>
+</h3>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/b977eb51cf8a4b5e2b6ddabda2781f4e8852.jpeg"
+    height="306" width="405" />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/12b188286823ab3e719d1782bbf6a02f2363.jpeg"
+    height="306" width="405" />
+</p>
+<hr />
+<h3>
+    4.4 设置接口
+    <span style="font-size: 16px;">
+        端口模式为trunk &nbsp;：
+        <code>
+            switchport mode trunk&nbsp;
+        </code>
+    </span>
+</h3>
+<p style="text-align: center;">
+    <a target="_blank" rel="noopener" href="https://pic.rmb.bdstatic.com/bjh/240625/acf15d22f73b2b9bb0d9930fa96a21463614.jpeg">
+        <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/138f28e0744f50ebc60c897b0965f3056401.jpeg"
+        height="325" width="405" />
+    </a>
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/acf15d22f73b2b9bb0d9930fa96a21463614.jpeg"
+    height="325" width="405" />
+</p>
+<hr />
+<h3>
+    4.5
+    <span style="font-size: 16px;">
+        将每个vlan的网关地址指派给三层交换机对应的虚拟接口
+    </span>
+</h3>
+<blockquote>
+    <p>
+        <span style="font-size: 16px;">
+            vlan10: &nbsp;
+            <code>
+                ip address 192.168.1.254 255.255.255.0
+            </code>
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            vlan20: &nbsp;
+            <code>
+                ip address 192.168.2.254 255.255.255.0
+            </code>
+        </span>
+    </p>
+</blockquote>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/5f15c5cc3b2255563c4473e3532bc1375191.jpeg"
+    height="329" width="410" />
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/9323db3529989a02d1e0c52f4ac94cc98834.jpeg"
+    height="310" width="410" />
+</p>
+<hr />
+<h3>
+    4.6 查看所有接口的IP地址及状态
+    <code>
+        show ip interface brief
+    </code>
+</h3>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/4b2df8ce789a1325138e8a395d6fdda29630.jpeg"
+    height="380" width="503" />
+</p>
+<hr />
+<h3>
+    4.7 验证不同vlan间的互联互通
+</h3>
+<p style="text-align: center;">
+    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/240625/c12aedbd932f4bc00e9ddd66bd49a6682007.jpeg"
+    height="161" width="825" />
+</p>
+<hr />
+<h1>
+    七、
+    <strong>
+        实验常见故障及分析
+    </strong>
+</h1>
+<p>
+    &emsp;
+    <span style="font-size: 16px;">
+        &emsp;在进行网络组建时，常常会碰到以下的故障现象，请思考如何进行故障诊断，并通过调试，解决网络的互联互通问题。
+    </span>
+</p>
+<hr />
+<h2>
+    <span style="font-size: 16px;">
+        1.未划分vlan，一个交换机上的主机ping不通？
+    </span>
+</h2>
+<ul>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查物理连接
+            </strong>
+            ：确保所有设备都正确连接到交换机，并且交换机的
+            <strong>
+                端口状态是up
+            </strong>
+            。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查IP配置
+            </strong>
+            ：确认主机的
+            <strong>
+                IP地址
+            </strong>
+            、
+            <strong>
+                子网掩码
+            </strong>
+            和
+            <strong>
+                默认网关
+            </strong>
+            是否配置正确，
+            <strong>
+                并且在同一子网内
+            </strong>
+            。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查交换机配置
+            </strong>
+            ：查看交换机是否有端口隔离或者安全设置阻止了数据包的传输。
+        </span>
+    </li>
+</ul>
+<hr />
+<h2>
+    <span style="font-size: 16px;">
+        2.划分vlan后，同一交换机上同vlan的主机ping不通？
+    </span>
+</h2>
+<ul>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查VLAN配置
+            </strong>
+            ：确认VLAN划分正确，并且主机都被分配到了正确的VLAN。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查端口配置
+            </strong>
+            ：确保交换机端口被正确地分配到相应的VLAN。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查VLAN接口状态
+            </strong>
+            ：确保VLAN接口处于
+            <strong>
+                激活状态
+            </strong>
+            。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查交换机模式
+            </strong>
+            ：确认交换机工作在正确的模式下，例如，是否是Access模式或者Trunk模式。
+        </span>
+    </li>
+</ul>
+<hr />
+<h2>
+    <span style="font-size: 16px;">
+        3.划分vlan后，不同交换机上同vlan的主机ping不通？
+    </span>
+</h2>
+<ul>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查Trunk链接
+            </strong>
+            ：确保连接两个
+            <strong>
+                交换机的端口配置为Trunk模式
+            </strong>
+            ，并且
+            <strong>
+                允许相应的VLAN通过
+            </strong>
+            。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查VLAN透传
+            </strong>
+            ：确认VLAN信息在交换机之间正确透传。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查路由配置
+            </strong>
+            ：如果VLAN间通信需要通过路由器，确保路由器配置了正确的接口和路由规则。
+        </span>
+    </li>
+</ul>
+<hr />
+<h2>
+    <span style="font-size: 16px;">
+        4.接入三层交换机，划分vlan后，不同交换机上不同vlan的主机仍ping不通？
+    </span>
+</h2>
+<ul>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查三层交换机配置
+            </strong>
+            ：确认三层交换机的VLAN接口配置正确，并且启用了路由功能。
+        </span>
+    </li>
+    <li>
+        <span style="font-size: 16px;">
+            <strong>
+                检查路由协议
+            </strong>
+            ：如果使用动态路由协议，确保协议配置正确，并且所有设备都参与到路由协议中。
+        </span>
+    </li>
+</ul>
+<hr />
+<h1>
+    八、参考命令及资料
+</h1>
+<blockquote>
+    <h2>
+        <strong>
+            1
+        </strong>
+        <strong>
+            .
+        </strong>
+        <strong>
+            交换机命令行操作模式的进入
+        </strong>
+    </h2>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch&gt;enable &nbsp;&nbsp;&nbsp;&nbsp; !进入级特权模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch#
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch# configure terminal &nbsp;&nbsp;&nbsp;
+            !进入全局配置模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config)#
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config)# interface fastethernet 0/5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!进入交换机F0/5的接口模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config-if)#
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config-if)# exit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            !退回到上一级操作模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config)#
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;switch(config-if)# end &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            !直接退回到特权模式
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch#
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch# exit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!退出配置状态
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch&gt;
+        </span>
+    </p>
+</blockquote>
+<blockquote>
+    <h2>
+        <strong>
+            2
+        </strong>
+        <strong>
+            .交换机设备名称的配置。
+        </strong>
+    </h2>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config)# hostname &nbsp;n-switch !配置交换机的设备名称为n-switch(n为学号)
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;n-switch(config)#
+        </span>
+    </p>
+</blockquote>
+<blockquote>
+    <h2>
+        <strong>
+            3
+        </strong>
+        <strong>
+            .查看交换机各项信息。
+        </strong>
+    </h2>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;N-switch#
+            <strong>
+                show version
+            </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; !查看交换机的版本信息
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;N-switch#
+            <strong>
+                show mac-address-table
+            </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; !查看交换机的MAC地址表
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;N-switch#
+            <strong>
+                &nbsp;show running-config
+            </strong>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!查看交换机当前生效的配置信息
+        </span>
+    </p>
+</blockquote>
+<blockquote>
+    <h2>
+        <strong>
+            4.
+        </strong>
+        <strong>
+            二层交换机配置
+        </strong>
+        <strong>
+            指南
+        </strong>
+    </h2>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                在交换机上创建vlan
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config)# Vlan 10 &nbsp; !创建vlan 10
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config-vlan)# name xingzhendadui &nbsp;&nbsp;&nbsp; !将Vlan10命名为test10
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config-vlan)# exit
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                将接口分配到VLAN
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config)# interface fastethernet 0/1&nbsp;
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config-if)#&nbsp;switchport access vlan 10 !将fastethernet
+            0/1端口加入vlan10中
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config-if)#&nbsp;exit
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                设置交换机之间互联的接口(假设为0/24端口)为tag vlan 模式。
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            Switch(config)# interface fastethernet 0/24
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch(config-if)#&nbsp;switchport mode trunk
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch# show interfaces fastethernet 0/24 switchport
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            ! 验证fastethemet 0/24端口已被设置为tag vlan模式
+        </span>
+    </p>
+</blockquote>
+<blockquote>
+    <h2>
+        <strong>
+            5
+        </strong>
+        <strong>
+            .三层交换机配置
+        </strong>
+        <strong>
+            指南
+        </strong>
+    </h2>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                在三层交换机上创建vlan
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config)# Vlan 10 &nbsp; !创建vlan 10
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config-vlan)# name xingzhendadui &nbsp;&nbsp;&nbsp; !将Vlan10命名为test10
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            switch(config-vlan)# exit
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                将连接主机的交换机接口分配到VLAN
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config)# interface fastethernet 0/1&nbsp;
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config-if)#&nbsp;switchport access vlan 10 !将fastethernet
+            0/1端口加入vlan10中
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            &nbsp;&nbsp;switch(config-if)#&nbsp;exit
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                设置交换机之间互联的接口(假设为0/24端口)为tag vlan 模式。
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            Switch(config)# interface fastethernet 0/24
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch(config-if)#&nbsp;switchport trunk encapsulation dot1q
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch(config-if)#&nbsp;switchport mode trunk
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch# show interfaces fastethernet 0/24 switchport
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            ! 验证fastethemet 0/24端口已被设置为tag vlan模式
+        </span>
+    </p>
+    <ul>
+        <li>
+            <span style="font-size: 18px;">
+                设置三层交换机VLAN间通信
+            </span>
+        </li>
+    </ul>
+    <p>
+        <span style="font-size: 16px;">
+            Switch (config)# interface vlan 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!配置虚拟接口vlan
+            10
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch (config-if)# ip address
+            <strong>
+                &nbsp;192.168.10.254 &nbsp;255.255.255.0
+            </strong>
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            !配置虚拟接口vlan 10的地址为192.168.10.254
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch (config-if)# no shutdown &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!开启端口
+        </span>
+    </p>
+    <p>
+        <span style="font-size: 16px;">
+            Switch (config-if)# exit
+        </span>
+    </p>
+</blockquote>
+<p>
+    &nbsp;
+</p></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://blog.mingkai.fun/">Mingkai</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/87b.html">http://example.com/posts/87b.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Mingkai's Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>觉得对您有帮助的话，还请您赏个仨瓜俩枣～</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/Wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/Alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/55b4.html" title="Wireshark抓包分析理解DHCP协议及工作流程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Wireshark抓包分析理解DHCP协议及工作流程</div></div><div class="info-2"><div class="info-item-1">     一、DHCP简介                &emsp;&emsp;                      DHCP（Dynamic Host Configuration Protocol）                  动态主机配置协议，前身是BOOTP协议。在大型局域网中，需要给很多主机配置地址信息，如果采用传统手工配置（累死），效率太低，因                   此采用此协议可以很方便的给主机配置各种地址信息，例如IP地址，SubMask、网关地址、DNS等等。                     &emsp;&emsp;下面进行简单介绍，下面所述中                      Client值得就是DHCP Client，Server指的是DHCP Server                  。             (1)DHCP协议理解                                                                   定义：                  ...</div></div></div></a><a class="pagination-related" href="/posts/3eeb.html" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    实验报告册模板及实验pkt文件下载：
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    一、实验内容
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    二、实验目的和要求
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    三、实验设备（软、硬件）
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    四、实验设计方案（或实验综合知识）
+</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    五、实验原理
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    1. 二层交换技术
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    2. VLAN技术
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    3. 三层交换技术
+</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    六、实验方法及步骤
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    (1) 简单局域网环境的搭建
+</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    1.1 特定网段 192.168.168.1.0&#x2F;24
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    1.2 给3台主机分配IP地址
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    1.3 ping命令 测试主机间的连通性
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    1.4 ipconfig命令 显示当前网络配置
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    1.5 tracert命令 查看数据包从你的计算机到目标主机所经过的路由路径
+</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    (2)交换机常用的配置命令行及命令行操作模式
+</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    2.1 交换机的命令行操作模式
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    2.2 交换机的常用配置命令行
+</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    (3)利用二层交换机实现同vlan间的通信
+</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    3.1
+    
+        show vlan
+    
+    命令查看当前vlan数据库情况
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    3.2 vlan 配置中添加vlan10和vlan20
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    3.3 交换机的接口配置
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    3.4 验证同vlan中主机间的互联互通
+</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">
+    3.4.1 相同交换机、相同vlan中主机的互联互通
+</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">
+    3.4.2 不同交换机、相同vlan中主机的互联互通
+</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    (4)利用三层交换机实现不同vlan间的通信
+</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.1 实现过程概述
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.2 查看三层交换机的虚拟接口 Fa0&#x2F;1和Fa0&#x2F;2
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.3
+    
+        trunk协议封装为dot1q ：
+        
+            switchport trunk encapsulation dot1q
+        
+    
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.4 设置接口
+    
+        端口模式为trunk  ：
+        
+            switchport mode trunk 
+        
+    
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.5
+    
+        将每个vlan的网关地址指派给三层交换机对应的虚拟接口
+    
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.6 查看所有接口的IP地址及状态
+    
+        show ip interface brief
+    
+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
+    4.7 验证不同vlan间的互联互通
+</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    七、
+    
+        实验常见故障及分析
+    
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    
+        1.未划分vlan，一个交换机上的主机ping不通？
+    
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    
+        2.划分vlan后，同一交换机上同vlan的主机ping不通？
+    
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    
+        3.划分vlan后，不同交换机上同vlan的主机ping不通？
+    
+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+    
+        4.接入三层交换机，划分vlan后，不同交换机上不同vlan的主机仍ping不通？
+    
+</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+    八、参考命令及资料
+</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+        
+            1
+        
+        
+            .
+        
+        
+            交换机命令行操作模式的进入
+        
+    </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+        
+            2
+        
+        
+            .交换机设备名称的配置。
+        
+    </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+        
+            3
+        
+        
+            .查看交换机各项信息。
+        
+    </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+        
+            4.
+        
+        
+            二层交换机配置
+        
+        
+            指南
+        
+    </span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
+        
+            5
+        
+        
+            .三层交换机配置
+        
+        
+            指南
+        
+    </span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><!-- 页脚整体容器--><div id="footer-wrap"><!-- 页脚主要内容容器--><div id="ft"><!-- 左侧链接区块（靶场/工具/论坛）--><div class="ft-item-1"><div class="t-top"><!-- 左侧链接组（靶场和工具）--><div class="t-t-l"><!-- 在线靶场部分--><p class="ft-t t-l-t">在线靶场🌊</p><ul class="ft-links"><li><!-- 靶场链接列表--><a target="_blank" rel="noopener" href="https://www.nssctf.cn/index ">NSSCTF        //- 国家网络安全靶场</a><a target="_blank" rel="noopener" href="https://buuoj.cn/ ">BUUCTF                  //- 北京联合大学CTF平台</a><a target="_blank" rel="noopener" href="https://ctf.show/ ">ctfshow                //- CTF技能提升平台</a></li></ul><!-- 工具平台部分--><p class="ft-t t-l-t">工具平台⚙️</p><ul class="ft-links"><li><!-- 工具链接列表--><a target="_blank" rel="noopener" href="https://forum.ywhack.com/shell.php ">棱角社区  //- 安全工具平台</a><a target="_blank" rel="noopener" href="https://xssaq.com/ ">XSS安全平台              //- XSS漏洞测试</a><a target="_blank" rel="noopener" href="http://dnslog.cn/ ">DNSLog                 //- DNS查询工具</a><a target="_blank" rel="noopener" href="http://www.hiencode.com/ ">CTF在线工具        //- 综合CTF工具</a><a target="_blank" rel="noopener" href="https://www.csdn.net/ ">CSDN                //- 开发者社区</a></li></ul></div></div></div><!-- 右侧友链区块--><div class="ft-item-2"><p class="ft-t">推荐友链<(｀^′)> </p><div class="ft-img-group"><!-- 友链图片组--><div class="img-group-item"><a target="_blank" rel="noopener" href="https://zhang-blogs.cn/ " title="zhang的小屋"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/self.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.fomal.cc/ " title="Fomalhaut🥝"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-Fomalhaut.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://fe32.top/ " title="唐志远の博客"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-%E5%94%90%E5%BF%97%E8%BF%9C.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://akilar.top/ " title="Akilarの糖果屋"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-akilar.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://butterfly.js.org/ " title="Butterfly"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-butterfly-author.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://blog.anheyu.com/ " title="安知鱼"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-anzhiyu.png " alt=""/></a></div><div class="img-group-item"><a target="_blank" rel="noopener" href="https://z0yuan.cn/ " title="z0yuanのBlog"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://zhang-blogs.cn/images/link/1-z0yuan.png " alt=""/></a></div></div></div></div><!-- 版权信息区块（条件判断）--><!-- 根据配置显示版权年份--><div class="copyright"><span><b>&copy;2024 - 2025</b></span><span><b>&nbsp;&nbsp;By Mingkai</b></span></div><div id="workboard"><!-- 技术栈徽章展示区--></div><p id="ghbdages"><!-- Hexo框架徽章--><a class="github-badge" target="_blank" href="https://hexo.io/ " style="margin-inline:5px" title="博客框架为Hexo_v7.3.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo_v7.3.0-%231E90FF?style=flat&amp;logo=hexo " alt="Hexo框架版本"/></a><!-- Butterfly主题徽章--><a class="github-badge" target="_blank" href="https://butterfly.js.org/ " style="margin-inline:5px" title="主题版本Butterfly_v5.3.2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly_v5.3.2-%239932CC%09?style=flat&amp;logo=element " alt="主题版本"/></a><!-- ICP备案信息徽章--><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/recordQuery" style="margin-inline:5px" title="本站暂未备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/ICP-%E6%9A%82%E6%9C%AA%E5%A4%87%E6%A1%88-%23B22222%09?style=flat&amp;logo=adguard" alt=""/></a><!-- 云服务器信息徽章--><a class="github-badge" target="_blank" href="https://cn.aliyun.com/" style="margin-inline:5px" title="本站源码部署在阿里云服务器上"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Server-%E9%98%BF%E9%87%8C%E4%BA%91-%23FFA500%09?style=flat&amp;logo=alibabacloud" alt=""/></a><!-- cdn加速服务提供商信息徽章--><a class="github-badge" target="_blank" href="https://cn.aliyun.com/" style="margin-inline:5px" title="本站使用xx云提供CDN加速与防护"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-XXX-%23008000%09?style=flat&amp;logo=speedtest" alt=""/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer src="/js/runtime.js"></script><script async data-pjax src="/js/txmap.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
